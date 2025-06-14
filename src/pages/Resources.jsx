@@ -7,7 +7,7 @@ const categories = [
     title: "Mathematics & Foundations",
     color: "indigo-600",
     icon: <FaBook className="text-indigo-600" size={28} />,
-    description: "Master linear algebra, probability & statistics — the backbone of AI/ML.",
+    description: "Master linear algebra, probability & statistics - the backbone of AI/ML.",
     resources: [
       { name: "Khan Academy - Linear Algebra", url: "https://www.khanacademy.org/math/linear-algebra" },
       { name: "StatQuest YouTube", url: "https://www.youtube.com/user/joshstarmer" },

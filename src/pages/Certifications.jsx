@@ -44,7 +44,7 @@ function Certifications() {
     <section className="certifications">
       <h2>Certifications</h2>
       <p style={{ fontStyle: 'normal', marginBottom: '1rem' }}>
-        Here are some key certifications demonstrating my skills and expertise. All certrifications are available on my LinkedIn profile.
+        Here are some key certifications demonstrating my skills and expertise. All certifications are available on my LinkedIn profile.
       </p>
       <motion.ul
         variants={containerVariants}
