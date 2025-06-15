@@ -7,6 +7,8 @@ function Skills() {
       <ul>
         <li>Python (NumPy, Pandas, Scikit-learn, TensorFlow)</li>
         <li>Machine Learning & Deep Learning</li>
+        <li>AWS</li>
+        <li>Tableau</li>
         <li>React, HTML, CSS, JavaScript</li>
         <li>APIs & Flask</li>
         <li>Problem Solving & Critical Thinking</li>
