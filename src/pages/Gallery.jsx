@@ -3,14 +3,14 @@ import React from 'react';
 const mediaItems = [
   {
     type: 'image',
-    src: ['IMG_7960.jpg','IMG_7958.png'],
+    src: ['img_7960.jpg','img_7958.png'],
     title: 'Scanning barcodes with Pzbar',
     description:
       'Developed a barcode scanning application using Pzbar, a Python library for reading barcodes. The project featured a simple interface to scan and decode both barcodes and QR codes from images or PDFs, demonstrating the potential of computer vision in streamlining internal workflows. My goal was to integrate this solution into a larger inventory management system to eliminate dependency on external hardware scanners (like Honeywell) and avoid the need for complex barcode parsing templates within the ERP system. The demo was well-received and showcased how easily the solution could be maintained in-house.'
         },
   {
     type: 'image',
-    src: 'IMG_7951.png',
+    src: 'img_7951.png',
     title: 'LMS system with Flask',
     description:
       'Built a Learning Management System (LMS) using Flask and React for the company, featuring real-time quiz assignments and attendance tracking. The project was developed as part of an internal training portal for trainees and completed in about a week. The application includes two dashboards: an Admin Dashboard for uploading training materials, creating and assigning quizzes; and a Trainee Dashboard for accessing the assigned materials and attempting quizzes. The goal was to develop an in-house LMS to avoid the high costs of third-party licenses, providing the company with a scalable and cost-effective alternative.'
