@@ -9,47 +9,29 @@ import AboutMe from './pages/AboutMe';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faHackerrank } from '@fortawesome/free-brands-svg-icons';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
 
 function App() {
   const [page, setPage] = useState('home');
-  const [menuOpen, setMenuOpen] = useState(false);
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
-    setMenuOpen(false);
   };
 
   return (
     <div className="container">
       <nav className="navbar">
-        {/* Hamburger button - absolutely positioned on mobile */}
-        <button
-          className={`menu-toggle ${menuOpen ? 'open' : ''}`}
-          onClick={() => setMenuOpen((open) => !open)}
-          aria-label="Toggle navigation menu"
-          aria-expanded={menuOpen}
-          aria-controls="primary-navigation"
-        >
-          <FontAwesomeIcon icon={menuOpen ? faTimes : faBars} size="lg" />
-        </button>
-
-        {/* Nav buttons */}
-        <div
-          id="primary-navigation"
-          className={`nav-links ${menuOpen ? 'open' : ''}`}
-          role="menu"
-        >
-          <button role="menuitem" onClick={() => handlePageChange('home')}>Home</button>
-          <button role="menuitem" onClick={() => handlePageChange('aboutme')}>About Me</button>
-          <button role="menuitem" onClick={() => handlePageChange('CaseStudies')}>Case Studies</button>
-          <button role="menuitem" onClick={() => handlePageChange('Gallery')}>Gallery</button>
-          <button role="menuitem" onClick={() => handlePageChange('Certifications')}>Certifications</button>
-          <button role="menuitem" onClick={() => handlePageChange('Skills')}>Skills</button>
-          <button role="menuitem" onClick={() => handlePageChange('Resources')}>Resources</button>
-          <button role="menuitem" onClick={() => handlePageChange('contact')}>Contact</button>
+        {/* Nav buttons always visible */}
+        <div className="nav-links">
+          <button onClick={() => handlePageChange('home')}>Home</button>
+          <button onClick={() => handlePageChange('aboutme')}>About Me</button>
+          <button onClick={() => handlePageChange('CaseStudies')}>Case Studies</button>
+          <button onClick={() => handlePageChange('Gallery')}>Gallery</button>
+          <button onClick={() => handlePageChange('Certifications')}>Certifications</button>
+          <button onClick={() => handlePageChange('Skills')}>Skills</button>
+          <button onClick={() => handlePageChange('Resources')}>Resources</button>
+          <button onClick={() => handlePageChange('contact')}>Contact</button>
         </div>
       </nav>
 
