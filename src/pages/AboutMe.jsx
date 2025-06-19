@@ -25,6 +25,21 @@ const hobbies = [
       "I’ve always had a fear of heights... the kind that makes your knees wobble just standing on a third-floor balcony. But thanks to a few slightly reckless yet incredibly supportive friends, I found myself roped in (literally) to the world of rock climbing. It’s been a challenge, but one I’m embracing, and I hope to be as skilled as they are someday.",
     video: "/img_7611.mp4",
   },
+  {
+    title: "🎭 Stage Plays",
+    description: (
+      <>
+        <p>
+        Growing up, I had the opportunity to perform in several stage plays, which sparked my love for storytelling and performance. Here are a few highlights:
+        </p>
+      <ul style={{ paddingLeft: "1.2rem", margin: 0 }}>
+        <li><strong>As You Like It</strong> – played Adam</li>
+        <li><strong>Othello</strong> – played Desdemona’s father</li>
+        <li><strong>The Adventures of Tom Sawyer</strong> – played Tom. Had a blast painting the fence on stage!</li>
+      </ul>
+      </>
+    ),
+  },
 ];
 
 const IntroHeader = () => {
@@ -153,7 +168,7 @@ Growing up in the Middle East and spending most of my life in Dubai has given me
 
 const AboutMe = () => {
   return (
-    <div className="about-me-page" style={{ maxWidth: "900px", margin: "0 auto"}}>
+    <div className="about-me-page" style={{ maxWidth: "900px", margin: "0 auto" }}>
       {/* About Section */}
       <section className="section-card" style={{ marginBottom: "3rem" }}>
         <h2 style={{ marginBottom: "1.5rem", fontSize: "1.8rem" }}>About Me</h2>
@@ -217,8 +232,9 @@ const AboutMe = () => {
             >
               <h3 style={{ marginBottom: "0.6rem" }}>{title}</h3>
               <p style={{ fontSize: "0.95rem", lineHeight: "1.4", marginBottom: "0.8rem" }}>
-                {description}
+                {typeof description === "string" ? description : null}
               </p>
+              {typeof description !== "string" ? description : null}
 
               {image && (
                 <img
