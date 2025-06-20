@@ -311,7 +311,7 @@ ul li {
   font-size: 1.8rem;
   cursor: pointer;
   padding: 10px;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .nav-links {
