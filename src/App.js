@@ -44,7 +44,7 @@ function App() {
 
       <main>
         {page === 'home' && (
-          <>
+          <div className="home-content">
             <h1>Building Robust Software, One Line at a Time...</h1>
             <p>Showcasing my journey and passion for software development, AI and automation.</p>
             <img
@@ -70,8 +70,9 @@ function App() {
                 <li>Self driving - Autonomous Vehicles</li>
               </ul>
             </section>
-          </>
+          </div>
         )}
+
 
         {page === 'CaseStudies' && <CaseStudies />}
         {page === 'contact' && <Contact />}
