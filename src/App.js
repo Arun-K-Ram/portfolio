@@ -8,22 +8,29 @@ import Resources from './pages/Resources';
 import AboutMe from './pages/AboutMe';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faHackerrank } from '@fortawesome/free-brands-svg-icons';
 
 import './App.css';
 
 function App() {
   const [page, setPage] = useState('home');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handlePageChange = (newPage) => {
     setPage(newPage);
+    setMenuOpen(false); // Close menu after clicking
   };
 
   return (
     <div className="container">
       <nav className="navbar">
-        {/* Nav buttons always visible */}
-        <div className="nav-links">
+        {/* Hamburger icon only visible on mobile */}
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <FontAwesomeIcon icon={faBars} size="lg" />
+        </div>
+
+        <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
           <button onClick={() => handlePageChange('home')}>Home</button>
           <button onClick={() => handlePageChange('aboutme')}>About Me</button>
           <button onClick={() => handlePageChange('CaseStudies')}>Case Studies</button>
