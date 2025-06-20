@@ -377,6 +377,7 @@ ul li {
 @media (max-width: 768px) {
   .home-content {
     margin-top: 10px;
+    padding-left: 1.2rem;
   }
 }
 
