@@ -302,9 +302,15 @@ ul li {
 
 .hamburger {
   display: none;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
   cursor: pointer;
   padding: 10px;
-  z-index: 1001;
+  z-index: 1000;
 }
 
 .nav-links {
@@ -330,17 +336,26 @@ ul li {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 45px;
-    left: 10px;
-    background-color: white;
+    top: 3.5rem;
+    left: 0px;
+    background-color: #fff;
     border: 1px solid #ddd;
+    width: 100%;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
+    z-index: 999;
   }
 
   .nav-links.open {
     display: flex;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .nav-links button {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
   }
 }
 .hero-image {
