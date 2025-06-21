@@ -380,4 +380,6 @@ ul li {
     padding-left: 1.6rem;
   }
 }
-
+.tableau-dash > div {
+  min-height: 600px;
+}

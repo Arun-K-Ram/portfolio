@@ -6,6 +6,7 @@ import Certifications from './pages/Certifications';
 import Gallery from './pages/Gallery';
 import Resources from './pages/Resources';
 import AboutMe from './pages/AboutMe';
+import TableauEmbed from './pages/TableauEmbed';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -25,7 +26,6 @@ function App() {
   return (
     <div className="container">
       <nav className="navbar">
-        {/* Hamburger icon only visible on mobile */}
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           <FontAwesomeIcon icon={faBars} size="lg" />
         </div>
@@ -54,6 +54,22 @@ function App() {
             />
 
             <section className="section-card ai-interest">
+              <h2>AI Meets Astronomy</h2>
+              <p>
+                This interactive tableau dashboard I have created, demonstrates how AI can be used to interpret complex astronomical data.
+                Using publicly available NASA exoplanet datasets:
+              </p>
+              <ul>
+                <li><strong>Exoplanet Discoveries Over the Years</strong>: A line chart showing how planetary discoveries have increased over time.</li>
+                <li><strong>Discovery Method Distribution</strong>: A pie chart breaking down which methods (e.g., transit, radial velocity) were used most frequently.</li>
+              </ul>
+              <p>
+                AI can be instrumental in analyzing vast space data, filtering signal from noise, and uncovering new celestial bodies. This project reflects my interest in merging AI with real-world challenges...even in outer space. To view the dashboard, click the "See this in full screen" link below.
+              </p>
+              <TableauEmbed />
+            </section>
+
+            <section className="section-card ai-interest">
               <h2>My Passion and Focus</h2>
               <p>
                 AI fascinates me because of its potential to transform industries and improve lives.
@@ -70,9 +86,9 @@ function App() {
                 <li>Self driving - Autonomous Vehicles</li>
               </ul>
             </section>
+
           </div>
         )}
-
 
         {page === 'CaseStudies' && <CaseStudies />}
         {page === 'contact' && <Contact />}
