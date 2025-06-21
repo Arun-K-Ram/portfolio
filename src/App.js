@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CaseStudies from './pages/CaseStudies';
 import Contact from './pages/Contact';
 import Skills from './pages/Skills';
@@ -14,13 +14,35 @@ import { faLinkedin, faGithub, faHackerrank } from '@fortawesome/free-brands-svg
 
 import './App.css';
 
+// ✅ Replace with your actual deployed Vercel function endpoint
+const LOGGING_ENDPOINT = '/api/logVisitor';
+
 function App() {
   const [page, setPage] = useState('home');
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        const locationInfo = `${data.city}, ${data.region}, ${data.country_name} (${data.ip})`;
+        fetch(LOGGING_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ location: locationInfo }),
+        })
+          .then(res => res.json())
+          .then(data => console.log('Visitor logged:', data))
+          .catch(err => console.error('Logging error:', err));
+      })
+      .catch(err => {
+        console.error('Location fetch failed:', err);
+      });
+  }, []);
+
   const handlePageChange = (newPage) => {
     setPage(newPage);
-    setMenuOpen(false); // Close menu after clicking
+    setMenuOpen(false);
   };
 
   return (
@@ -64,7 +86,7 @@ function App() {
                 <li><strong>Discovery Method Distribution</strong>: A pie chart breaking down which methods (e.g., transit, radial velocity) were used most frequently.</li>
               </ul>
               <p>
-                AI can be instrumental in analyzing vast space data, filtering signal from noise, and uncovering new celestial bodies. This project reflects my interest in merging AI with real-world challenges...even in outer space. To view the dashboard, click the "See this in full screen" link below.
+                AI can be instrumental in analyzing vast space data, filtering signal from noise, and uncovering new celestial bodies.
               </p>
               <TableauEmbed />
             </section>
@@ -86,7 +108,6 @@ function App() {
                 <li>Self driving - Autonomous Vehicles</li>
               </ul>
             </section>
-
           </div>
         )}
 
