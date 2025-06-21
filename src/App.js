@@ -14,7 +14,7 @@ import { faLinkedin, faGithub, faHackerrank } from '@fortawesome/free-brands-svg
 
 import './App.css';
 
-// ✅ Replace with your actual deployed Vercel function endpoint
+// Replace with your logging endpoint
 const LOGGING_ENDPOINT = 'https://aibycode.vercel.app/api/log-visitor';
 
 function App() {
